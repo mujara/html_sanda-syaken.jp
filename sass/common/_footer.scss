@@ -1,0 +1,161 @@
+@use "../_setting" as s;
+
+#footer {
+	background:#4B4B4B;
+	clear: both;
+	position:relative;
+	z-index:1;
+	.inBase{
+		position:relative;
+	}
+}
+
+#footer .footer__image{
+	display:block;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	@include s.media(m){
+		width:s.em(300);
+		position:absolute;
+		top:-2em;
+		right:0;
+	}
+	img{
+		width:100%;
+	}
+}
+
+#footer .footer__inner{
+	padding:4em 1em 1em;
+	display:block;
+	@include s.media(m){
+		padding:0;
+	}
+	.inBase__inner{
+		position:relative;
+		@include s.media(m){
+			padding:2em 0 2em;
+			display:flex;
+			align-items:flex-end;
+		}
+	}
+}
+
+#footer .footer__siteTitle{
+	display:block;
+	width:40%;
+	margin:0 auto 2em;
+	@include s.media(m){
+		width:14%;
+		margin:0;
+		padding-right:3em;
+	}
+	img{
+		margin-top:-0.5em;
+		width:100%;
+	}
+}
+
+#wrapper #footer .footer__naviBox {
+	display:block;
+	@include s.media(m){
+		width:60%;
+		padding-left:3em;
+		border-left:#FFF solid 1px;
+	}
+}
+
+#wrapper #footer .footer__navi {
+	width:100%;
+	border-top:#999999 dotted 1px;
+	display:block;
+	@include s.media(m){
+		width:100%;
+		display:flex;
+		border-top:none;
+	}
+	+.footer__navi{
+		margin-bottom:2em;
+		border-top:#999999 dotted 1px;
+		@include s.media(m){
+			width:100%;
+			display:flex;
+			border-top:none;
+			margin-bottom:0;
+		}
+		li:last-child{
+			border-bottom:#999999 dotted 1px;
+			@include s.media(m){
+				border-bottom:none;
+			}
+		}
+	}
+	li{
+		padding:5px 0;
+		border-bottom:#999999 dotted 1px;
+		@include s.media(m){
+			padding:0 0 5px;
+			border:none;
+			margin-right:1em;
+		}
+		a{
+			color:#FFF;
+			text-decoration:none;
+			font-family: 'Zen Kaku Gothic New', sans-serif;
+			font-weight:500;
+			&::before {
+				content:"\f111";
+                    		font-family: 'icomoon';
+				color:s.$colorType04;
+				font-size:0.6em;
+				margin-right:1em;
+			}
+			&:hover {
+				color: s.$colorType02;
+			}
+		}
+		&:last-child{
+			border-bottom:none;
+		}
+	}
+}
+
+#wrapper #footer .footer__navi02{
+	display:block;
+	margin-bottom:2em;
+	text-align:center;
+	position:relative;
+	@include s.media(m){
+		display:inline-block;
+		margin-bottom:0;
+		text-align:right;
+		float:right;
+	}
+	a{
+		color:#FFF;
+		text-decoration:none;
+		font-family: 'Zen Kaku Gothic New', sans-serif;
+		font-weight:500;
+		@include s.media(m){
+			width:11em;
+			display:inline-block;
+			position:absolute;
+			top:-1.5em;
+			right:2em;
+		}
+		&:hover {
+			color: s.$colorType02;
+		}
+		+a{
+			&::before {
+	                    	content: "/";
+				display:inline-block;
+				margin:0 0.5em;
+			}
+			&:hover::before {
+				color:#000;
+			}
+		}
+	}
+}
